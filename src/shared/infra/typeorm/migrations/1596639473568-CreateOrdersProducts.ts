@@ -61,8 +61,8 @@ export default class CreateOrdersProducts1596639473568 implements MigrationInter
               onUpdate: 'CASCADE',
             },
           ],
-        })
-      )
+        }),
+      );
     }
 
     public async down(queryRunner: QueryRunner): Promise<void> {

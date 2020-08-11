@@ -6,7 +6,6 @@ import IProductsRepository from '@modules/products/repositories/IProductsReposit
 import ICustomersRepository from '@modules/customers/repositories/ICustomersRepository';
 import Order from '../infra/typeorm/entities/Order';
 import IOrdersRepository from '../repositories/IOrdersRepository';
-//import ordersRouter from '../infra/http/routes/orders.routes';
 
 interface IProduct {
   id: string;
@@ -35,7 +34,7 @@ class CreateOrderService {
     const customer = await this.customersRepository.findById(customer_id);
 
     if (!customer) {
-      throw new AppError('Customer does not exists');
+      throw new AppError('Customer does not exists.');
     }
 
     const productsIds = products.map(product => {
